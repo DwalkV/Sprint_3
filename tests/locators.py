@@ -1,6 +1,6 @@
 class Locators:
     #кнопка «личный кабинет» на главной странице
-    lk_from_main_locator = (".//a[@href='/account']")
+    lk_from_main_locator = (".//p[contains(text(),'Личный Кабинет')]")
     #кнопка «войти в аккаунт» на главной странице
     login_from_main_page = (".//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg']")
     # поле «имя» на странице регистрации и поле email на странице авторизации
@@ -14,7 +14,7 @@ class Locators:
     #кнопка «Зарегистрироваться» на странице регистрации   и «Войти» на странице авторизации
     log_in = (".//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa']")
     #поле с почтой в личном кабинете
-    email_field_in_lk =  (".//body/div[@id='root']/div[1]/main[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/div[1]/div[1]/input[1]")
+    email_field_in_lk =  (".//input[@value='daria_volk_8_628@yandex.ru']")
     #надпись «неверный пароль»
     wrong_password = (".//p[@class='input__error text_type_main-default']")
     #кнопка «Войти» со страницы регистрации и восстановления пароля

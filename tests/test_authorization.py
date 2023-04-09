@@ -1,4 +1,7 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+
 from locators import Locators
 
 mail = 'daria_volk_8_628@yandex.ru'
@@ -11,6 +14,7 @@ class TestAuthorization():
         driver.find_element(By.XPATH, Locators.password_field).send_keys(password)
         driver.find_element(By.XPATH, Locators.log_in).click()
         driver.find_element(By.XPATH, Locators.lk_from_main_locator).click()
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.email_field_in_lk)))
         email_after = driver.find_element(By.XPATH, Locators.email_field_in_lk).get_attribute('value')
         assert email_after == mail
 
@@ -19,7 +23,10 @@ class TestAuthorization():
         driver.find_element(By.XPATH, Locators.name_or_email_locator).send_keys(mail)
         driver.find_element(By.XPATH, Locators.password_field).send_keys(password)
         driver.find_element(By.XPATH, Locators.log_in).click()
+        WebDriverWait(driver, 3).until(
+            expected_conditions.visibility_of_element_located((By.XPATH, Locators.lk_from_main_locator)))
         driver.find_element(By.XPATH, Locators.lk_from_main_locator).click()
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.email_field_in_lk)))
         email_after = driver.find_element(By.XPATH, Locators.email_field_in_lk).get_attribute('value')
         assert email_after == mail
 
@@ -30,7 +37,10 @@ class TestAuthorization():
         driver.find_element(By.XPATH, Locators.name_or_email_locator).send_keys(mail)
         driver.find_element(By.XPATH, Locators.password_field).send_keys(password)
         driver.find_element(By.XPATH, Locators.log_in).click()
+        WebDriverWait(driver, 3).until(
+            expected_conditions.visibility_of_element_located((By.XPATH, Locators.lk_from_main_locator)))
         driver.find_element(By.XPATH, Locators.lk_from_main_locator).click()
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.email_field_in_lk)))
         email_after = driver.find_element(By.XPATH, Locators.email_field_in_lk).get_attribute('value')
         assert email_after == mail
 
@@ -41,6 +51,9 @@ class TestAuthorization():
         driver.find_element(By.XPATH, Locators.name_or_email_locator).send_keys(mail)
         driver.find_element(By.XPATH, Locators.password_field).send_keys(password)
         driver.find_element(By.XPATH, Locators.log_in).click()
+        WebDriverWait(driver, 3).until(
+            expected_conditions.visibility_of_element_located((By.XPATH, Locators.lk_from_main_locator)))
         driver.find_element(By.XPATH, Locators.lk_from_main_locator).click()
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.email_field_in_lk)))
         email_after = driver.find_element(By.XPATH, Locators.email_field_in_lk).get_attribute('value')
         assert email_after == mail
