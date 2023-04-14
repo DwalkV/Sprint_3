@@ -1,6 +1,6 @@
 class Locators:
     #кнопка «личный кабинет» на главной странице
-    lk_from_main_locator = (".//p[contains(text(),'Личный Кабинет')]")
+    lk_from_main_locator = (".//p[text()='Личный Кабинет']")
     #кнопка «войти в аккаунт» на главной странице
     login_from_main_page = (".//button[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_large__G21Vg']")
     # поле «имя» на странице регистрации и поле email на странице авторизации
@@ -22,7 +22,7 @@ class Locators:
     #кнопка «Забыли пароль»
     forgot_password = (".//a[@href='/forgot-password']")
     #надпись «В этом разделе вы можете изменить свои персональные данные» в лк
-    lettering_in_lk = (".//p[@class= 'Account_text__fZAIn text text_type_main-default']")
+    lettering_in_lk = (".//p[contains(@class,'Account_text')]")
     #кнопка «Конструктор» из ЛК
     conctructor = (".//p[contains(text(),'Конструктор')]")
     #логотип

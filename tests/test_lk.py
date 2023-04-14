@@ -35,6 +35,7 @@ class TestLk:
         WebDriverWait(driver, 3).until(
             expected_conditions.visibility_of_element_located((By.XPATH, Locators.lk_from_main_locator)))
         driver.find_element(By.XPATH, Locators.lk_from_main_locator).click()
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.log_out)))
         driver.find_element(By.XPATH, Locators.log_out).click()
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locators.entrance)))
         checks = driver.find_element(By.XPATH, Locators.entrance).text
